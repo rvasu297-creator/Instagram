@@ -1,0 +1,263 @@
+.notif-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: transparent;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.notif-panel {
+  position: fixed;
+  top: 0;
+  left: 72px;
+  width: 400px;
+  max-width: 90vw;
+  height: 100vh;
+  background-color: #0C1014;
+  border-right: 1px solid #262626;
+  padding: 24px 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  scrollbar-width: none;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  pointer-events: auto;
+  z-index: 1001;
+}
+
+.notif-panel::-webkit-scrollbar {
+  display: none;
+}
+
+.notif-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.notif-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.notif-close {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Tabs - horizontally scrollable */
+.notif-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin-bottom: 20px;
+  scroll-behavior: smooth;
+}
+
+.notif-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.notif-tab {
+  flex-shrink: 0;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #565656;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+}
+
+.notif-tab:hover {
+  background-color: #1a1a1a;
+}
+
+.notif-tab.active {
+  background-color: #262626;
+  border-color: #565656;
+}
+
+.notif-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.notif-section {
+  margin-top: 8px;
+}
+
+.notif-section.no-title {
+  margin-top: 4px;
+  border-top: 1px solid #262626;
+  padding-top: 8px;
+}
+
+.notif-section h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 16px 0 10px 0;
+}
+
+.notif-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  position: relative;
+}
+
+.notif-requests-row {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #262626;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.notif-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #333;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.notif-avatar-group {
+  position: relative;
+  width: 52px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.notif-avatar.stacked {
+  position: absolute;
+  border: 2px solid #000;
+}
+
+.notif-avatar.stacked:nth-child(1) {
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.notif-avatar.stacked:nth-child(2) {
+  left: 18px;
+  top: 0;
+  z-index: 1;
+}
+
+.notif-shield {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+}
+
+.notif-shield-icon {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  clip-path: polygon(50% 0%, 100% 20%, 100% 60%, 50% 100%, 0% 60%, 0% 20%);
+}
+
+.notif-text {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.notif-username {
+  font-weight: 600;
+}
+
+.notif-time {
+  color: #a8a8a8;
+}
+
+.notif-subtext {
+  color: #a8a8a8;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.notif-following-btn {
+  background-color: #363636;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.notif-following-btn.follow-back {
+  background-color: #0095f6;
+  color: #fff;
+}
+
+.notif-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #0095f6;
+  flex-shrink: 0;
+}
+
+.notif-arrow {
+  color: #a8a8a8;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.notif-empty {
+  padding: 60px 0;
+  text-align: center;
+  color: #a8a8a8;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .notif-panel {
+    left: 0;
+    width: 100vw;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .notif-panel {
+    max-width: 100vw;
+    padding: 16px 14px 74px; 
+  }
+
+  .notif-header h2 {
+    font-size: 20px;
+  }
+
+  .notif-avatar {
+    width: 38px;
+    height: 38px;
+  }
+
+  .notif-avatar-group {
+    width: 46px;
+    height: 38px;
+  }
+
+  .notif-avatar.stacked:nth-child(2) {
+    left: 16px;
+  }
+}

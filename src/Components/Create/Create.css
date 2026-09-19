@@ -1,0 +1,261 @@
+
+.create-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.65);
+  animation: createFade 0.2s ease;
+}
+
+.create-close {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 10000;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.create-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.create-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: createScale 0.2s ease;
+}
+
+.create-title {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-right: 40px;
+}
+
+.create-modal {
+  width: 400px;
+  min-height: 400px;
+  background: #202328;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+.create-body {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.create-media-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  color: #ffffff;
+  font-size: 65px;
+}
+
+.create-media-icon svg:first-child {
+  margin-right: -20px;
+  transform: translateY(-8px);
+}
+
+.create-media-icon svg:last-child {
+  font-size: 58px;
+  transform: translateY(10px);
+}
+
+.create-body h3 {
+  margin: 0 0 26px;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.select-computer-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 7px;
+  background: #4f5df5;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.select-computer-btn:hover {
+  background: #4050e8;
+}
+
+.selected-file {
+  width: 100%;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.selected-file img,
+.selected-file video {
+  width: 100%;
+  max-height: 270px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #000000;
+}
+
+.change-file-btn {
+  padding: 9px 16px;
+  border: none;
+  border-radius: 7px;
+  background: #4f5df5;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@keyframes createFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes createScale {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .create-overlay {
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+  }
+
+  .create-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    padding: 0;
+  }
+
+  .create-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 56px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0c1014;
+    border-radius: 20px 20px 0 0;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .create-modal {
+    width: 100%;
+    min-height: 328px;
+    height: 328px;
+    border-radius: 20px;
+    background: #202328;
+  }
+
+  .create-body {
+    min-height: 328px;
+    height: 328px;
+    padding: 56px 20px 20px;
+    justify-content: center;
+  }
+
+  .create-media-icon {
+    margin-bottom: 18px;
+    font-size: 56px;
+  }
+
+  .create-media-icon svg:first-child {
+    margin-right: -17px;
+    transform: translateY(-7px);
+  }
+
+  .create-media-icon svg:last-child {
+    font-size: 50px;
+    transform: translateY(8px);
+  }
+
+  .create-body h3 {
+    margin: 0 0 20px;
+    font-size: 17px;
+    font-weight: 400;
+  }
+
+  .select-computer-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+  }
+
+  .create-close {
+    top: 14px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
+    z-index: 10001;
+  }
+
+  .create-close svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .selected-file {
+    height: 270px;
+  }
+
+  .selected-file img,
+  .selected-file video {
+    max-height: 200px;
+  }
+}
+

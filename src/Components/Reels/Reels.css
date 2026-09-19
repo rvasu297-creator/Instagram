@@ -1,0 +1,406 @@
+.reels-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #0c1014;
+  overflow: hidden;
+  color: #fff;
+}
+
+.reels-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.reel-video-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 370px;
+  height: 84vh;
+  max-height: 780px;
+  min-height: 500px;
+  transform: translate(-50%, -50%);
+  background: #000;
+  border-radius: 6px;
+  overflow: visible;
+  z-index: 2;
+}
+
+.reel-video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #000;
+}
+
+.mute-btn {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(70, 70, 70, 0.85);
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.mute-btn:hover {
+  background: rgba(90, 90, 90, 0.95);
+}
+
+.reel-info {
+  position: absolute;
+  left: -250px;
+  bottom: 8px;
+  width: 310px;
+  color: #fff;
+  z-index: 10;
+}
+
+.reel-user-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 10px;
+}
+
+.reel-profile-pic {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.reel-username {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.verified-dot {
+  color: #3897f0;
+  font-size: 11px;
+  margin-left: -3px;
+}
+
+.follow-btn {
+  margin-left: 2px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #3897f0;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.follow-btn:hover {
+  color: #fff;
+}
+
+.reel-music-row {
+  width: 310px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.reel-caption {
+  width: 310px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #fff;
+  margin-bottom: 2px;
+  word-wrap: break-word;
+}
+
+.reel-hashtags {
+  width: 310px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #fff;
+  word-wrap: break-word;
+}
+
+.reel-actions {
+  position: absolute;
+  left: calc(50% + 205px);
+  top: 50%;
+  transform: translateY(-28%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: #fff;
+  z-index: 5;
+}
+
+.reel-action-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #fff;
+  font-size: 27px;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.reel-action-item:hover {
+  transform: scale(1.08);
+}
+
+.reel-action-item span {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1;
+}
+
+.liked-icon {
+  color: #ff3040;
+}
+
+.mini-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini-thumb img {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.reel-nav-buttons {
+  position: fixed;
+  right: 38px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 30;
+}
+
+.reel-nav-btn {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(45, 45, 45, 0.8);
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.reel-nav-btn:hover {
+  background: rgba(70, 70, 70, 0.95);
+}
+
+.reel-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+@media (min-width: 1101px) and (max-width: 1399px) {
+  .reel-video-wrapper {
+    width: 365px;
+    height: 84vh;
+  }
+
+  .reel-info {
+    left: -250px;
+    width: 300px;
+  }
+
+  .reel-music-row,
+  .reel-caption,
+  .reel-hashtags {
+    width: 300px;
+  }
+
+  .reel-actions {
+    left: calc(50% + 200px);
+  }
+
+  .reel-nav-buttons {
+    right: 30px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .reel-video-wrapper {
+    width: 345px;
+    height: 80vh;
+  }
+
+  .reel-info {
+    left: -225px;
+    width: 265px;
+  }
+
+  .reel-music-row,
+  .reel-caption,
+  .reel-hashtags {
+    width: 265px;
+  }
+
+  .reel-actions {
+    left: calc(50% + 185px);
+    gap: 18px;
+  }
+
+  .reel-nav-buttons {
+    right: 18px;
+  }
+
+  .reel-nav-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 700px) {
+  .reels-page {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .reel-video-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    max-height: none;
+    min-height: 0;
+    transform: none;
+    border-radius: 0;
+  }
+
+  .reel-video {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    object-fit: cover;
+  }
+
+  .reel-info {
+    left: 14px;
+    bottom: 65px;
+    width: calc(100% - 75px);
+  }
+
+  .reel-music-row,
+  .reel-caption,
+  .reel-hashtags {
+    width: 100%;
+  }
+
+  .reel-actions {
+    left: auto;
+    right: 12px;
+    top: auto;
+    bottom: 100px;
+    transform: none;
+    gap: 18px;
+  }
+
+  .reel-action-item {
+    font-size: 25px;
+  }
+
+  .reel-nav-buttons {
+    display: none;
+  }
+
+  .mute-btn {
+    right: 12px;
+    bottom: 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  .reel-info {
+    left: 10px;
+    bottom: 65px;
+    width: calc(100% - 65px);
+  }
+
+  .reel-username {
+    font-size: 13px;
+  }
+
+  .follow-btn {
+    font-size: 13px;
+  }
+
+  .reel-caption,
+  .reel-hashtags {
+    font-size: 12px;
+  }
+
+  .reel-actions {
+    right: 8px;
+    bottom: 90px;
+    gap: 15px;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .reel-info {
+    bottom: 65px;
+  }
+
+  .reel-actions {
+    bottom: 135px;
+  }
+
+  .reels-page {
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .reel-video-wrapper {
+    scroll-snap-align: start;
+  }
+
+
+  .mini-thumb {
+    display: none;
+  }
+
+
+  .reel-actions .reel-action-item:nth-last-child(2) {
+    display: none;
+  }
+}

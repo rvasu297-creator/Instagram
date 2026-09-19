@@ -1,0 +1,235 @@
+@font-face {
+  font-family: "Instagram Sans";
+  src: url("./assets/InstagramSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+body {
+  font-family: "Instagram Sans", sans-serif;
+  margin: 0;
+
+}
+.loginpage{
+  display: flex;
+}
+.LeftSection{
+  background-color: #0C1014;
+  width: 50%;
+
+}
+.logo{
+ margin: 55px;
+  height: 77px;
+  width: 77px;
+ margin-top: 45px;
+
+}
+.line {
+  color: white;
+  font-size: 30px;
+  font-weight: lighter;
+  margin: 99px;
+  margin-top:-20px;
+
+    
+}
+h2{
+   color: white;
+  font-size: 31px;
+  font-weight: lighter;
+  margin: 100px;
+  margin-top: -70px;
+  padding-left: 75px;
+ 
+
+}
+.title {
+  background: linear-gradient(90deg, #ff7a00, #e1306c, #833ab4);
+  color: transparent;
+  background-clip: text;
+    
+}
+.friend {
+  width: 350px;
+  margin-top:-100px;
+  margin-left: 110px;
+}
+
+.form{
+  background-color:#1F1F22;
+  width: 50%;
+  height: 90%;
+  border-left: 2px solid rgba(255, 255, 255, 0.132);
+}
+h5{
+  color: white;
+  font-size: 19px;
+  font-weight: lighter;
+   margin: 0 0 25px 50px;
+  margin-top: 100px;
+ 
+}
+.name{
+  background-color:#1F1F22; 
+  color: white;
+  border: 1px solid #555;
+  border-radius: 15px;
+  font-size: 16px;
+  width: 470px;
+  height: 55px;
+  margin: 0 0 0 50px;
+  margin-bottom: 15px;
+}
+.name::placeholder{
+  padding: 10px;
+}
+.pass{
+  background-color:#1F1F22; 
+  color: white;
+    border: 1px solid #555;
+  border-radius: 15px;
+  font-size: 16px;
+  width: 470px;
+  height: 55px;
+  margin: 0 0 0 50px;
+  margin-bottom: 20px;
+  
+}
+.pass::placeholder{
+  padding: 10px;
+}
+.btn{
+  background-color: #133B6E;
+  color: #636B75;
+  border-radius: 50px;
+  font-size: 17px;
+  width: 480px;
+  height: 45px;
+  margin: 0 0 0 50px;
+  margin-bottom: 20px;
+  border: none;
+ 
+}
+.btn:hover{
+  background-color: #0b60b0;
+  color: white;
+}
+.word{
+   background-color:#1F1F22; 
+   color: white;
+  font-weight: lighter;
+  border-radius: 50px;
+  font-size: 16px;
+   width: 480px;
+  height: 45px;
+  margin: 0 0 0 50px;
+  margin-bottom: 43px;
+   border: none;
+}
+.word:hover{
+  background-color: #363639;
+}
+.face{
+  background-color: #28292C;
+  color: rgba(255, 255, 255, 0.695);
+  border-radius: 50px;
+  font-size: 16px;
+  width: 480px;
+  height: 45px;
+  margin: 0 0 0 50px;
+  margin-bottom: 15px;
+  border: none;
+}
+.face:hover{
+    background-color: #363639;
+}
+.account{
+  color: #1A8FFB;
+  background-color: #1F1F22;
+  border-radius: 50px;
+  font-size: 17px;
+  width: 480px;
+  height: 45px;
+  margin: 0 0 0 50px;
+  margin-bottom: 19px;
+  border:1px solid  #1A8FFB;
+
+
+}
+.account:hover{
+    background-color: #363639;
+}
+.meta{
+  font-size: 20px;
+  margin: 0 0 0 250px;
+  margin-bottom: 80px;
+}
+
+/* ======================================================
+   MOBILE RESPONSIVE ADDITIONS ONLY — nothing above this
+   line was changed. Original Instagram login behaviour:
+   the two side-by-side panels stack vertically, the
+   phone-mockup image is hidden, form fields go full width.
+   ====================================================== */
+
+@media (max-width: 900px) {
+  .loginpage {
+    flex-direction: column;
+  }
+  .LeftSection,
+  .form {
+    width: 100%;
+  }
+  .friend {
+    display: none;
+  }
+  .logo {
+    margin: 30px auto 10px;
+  }
+  .line {
+    margin: 0 20px 20px;
+    text-align: center;
+    font-size: 24px;
+  }
+  h2 {
+    margin: 0 20px 20px;
+    padding-left: 0;
+    text-align: center;
+    font-size: 24px;
+  }
+  .form {
+    border-left: none;
+    border-top: 2px solid rgba(255, 255, 255, 0.132);
+    height: auto;
+    padding-bottom: 30px;
+  }
+  h5 {
+    margin: 30px 20px 20px;
+    text-align: center;
+  }
+  .name,
+  .pass,
+  .btn,
+  .word,
+  .face,
+  .account {
+    width: calc(100% - 40px);
+    margin: 0 20px 15px;
+  }
+  .meta {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 60px;
+    width: 60px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  .line {
+    font-size: 20px;
+  }
+}
