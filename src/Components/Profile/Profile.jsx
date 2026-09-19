@@ -68,7 +68,7 @@ const Profile = () => {
           <div className="profile-note">Note...</div>
 
           <div className="profile-avatar">
-            <img src="./Public/Profile.png" alt="" />
+            <img src="./profile.png" alt="" />
           </div>
         </div>
 
