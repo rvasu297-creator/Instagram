@@ -29,6 +29,7 @@ const Storyviewer = ({ stories = [], startIndex = 0, onClose = () => {} }) => {
   const [reply, setReply] = useState("");
 
   const intervalRef = useRef(null);
+  const touchStartX = useRef(0);
 
   const activeStory = stories[activeIndex];
 
@@ -53,6 +54,23 @@ const Storyviewer = ({ stories = [], startIndex = 0, onClose = () => {} }) => {
       setActiveIndex((prev) => prev - 1);
     }
   };
+
+  useEffect(() => {
+    const navbar = document.querySelector(
+      ".bottom-navbar, .navbar, #navbar, nav, .bottom-nav"
+    );
+
+    if (navbar) {
+      navbar.dataset.prevDisplay = navbar.style.display;
+      navbar.style.display = "none";
+    }
+
+    return () => {
+      if (navbar) {
+        navbar.style.display = navbar.dataset.prevDisplay || "";
+      }
+    };
+  }, []);
 
   useEffect(() => {
     if (isPaused || !activeStory) return;
@@ -106,6 +124,30 @@ const Storyviewer = ({ stories = [], startIndex = 0, onClose = () => {} }) => {
     };
   }, [activeIndex, stories.length]);
 
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+
+    if (diff > 50) {
+      goNext();
+    } else if (diff < -50) {
+      goPrev();
+    }
+  };
+
+  const handleWheel = (e) => {
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY) && Math.abs(e.deltaX) > 30) {
+      if (e.deltaX > 0) {
+        goNext();
+      } else {
+        goPrev();
+      }
+    }
+  };
+
   if (!activeStory) {
     return (
       <div className="story-not-found">
@@ -124,7 +166,12 @@ const Storyviewer = ({ stories = [], startIndex = 0, onClose = () => {} }) => {
         <FaTimes />
       </button>
 
-      <div className="stories-page-content">
+      <div
+        className="stories-page-content"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onWheel={handleWheel}
+      >
         {activeIndex > 0 && (
           <div className="story-side story-side-left">
             <button className="story-nav-arrow" onClick={goPrev}>
