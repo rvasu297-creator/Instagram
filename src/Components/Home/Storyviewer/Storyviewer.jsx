@@ -56,6 +56,22 @@ const Storyviewer = ({ stories = [], startIndex = 0, onClose = () => {} }) => {
   };
 
   useEffect(() => {
+    const setVH = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+
+    setVH();
+    window.addEventListener("resize", setVH);
+    window.addEventListener("orientationchange", setVH);
+
+    return () => {
+      window.removeEventListener("resize", setVH);
+      window.removeEventListener("orientationchange", setVH);
+    };
+  }, []);
+
+  useEffect(() => {
     const navbar = document.querySelector(
       ".bottom-navbar, .navbar, #navbar, nav, .bottom-nav"
     );
@@ -240,6 +256,11 @@ const Storyviewer = ({ stories = [], startIndex = 0, onClose = () => {} }) => {
           </div>
 
           <div className="story-content">
+            <div
+              className="story-content-bg"
+              style={{ backgroundImage: `url(${activeStory.image})` }}
+            />
+
             <img
               src={activeStory.image}
               alt={activeStory.name}
