@@ -242,7 +242,7 @@ export default function Messages() {
               }}
             >
               <img
-                src="./Public/Profile.png"
+                src="./profile.png"
                 alt="Your note"
                 style={{ width: 56, height: 56, objectFit: "cover", display: "block" }}
               />
