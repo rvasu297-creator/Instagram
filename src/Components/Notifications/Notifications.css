@@ -16,6 +16,7 @@
   background-color: #0C1014;
   border-right: 1px solid #262626;
   padding: 24px 20px;
+  
   box-sizing: border-box;
   overflow-y: auto;
   scrollbar-width: none;
