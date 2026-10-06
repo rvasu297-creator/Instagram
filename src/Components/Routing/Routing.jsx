@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import ImageSection from '../Login/ImageSection'
 import LoginForm from '../Login/LoginForm'
+import Signup from '../Login/Signup' 
 import HomePage from '../Pages/HomePage'
 import Reels from '../Reels/Reels'
 import Search from '../Search/Search'
@@ -15,6 +16,7 @@ const Routing = () => {
     <>
     <Routes>
       <Route path="/" element={<><ImageSection/><LoginForm /></>} />
+      <Route path='/signup' element={<Signup />} /> 
       <Route path='/HomePage' element={<HomePage/>}/>
       <Route path='/Reels' element={<Reels/>}/>
       <Route path='/Search' element={<Search/>}/>
