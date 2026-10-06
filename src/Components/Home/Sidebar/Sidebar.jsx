@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth"; 
+import { auth } from "../../../Firebase"; 
 
 import { FaInstagram } from "react-icons/fa";
 import { GrHomeRounded } from "react-icons/gr";
@@ -56,6 +58,16 @@ const Sidebar = ({
   const closeMoreAndMeta = () => {
     setShowMore(false);
     setShowMeta(false);
+  };
+
+  const handleLogout = async () => { 
+    try {
+      await signOut(auth);
+      closeMoreAndMeta();
+      navigate("/");
+    } catch (err) {
+      console.log(err.code);
+    }
   };
 
   useEffect(() => {
@@ -337,7 +349,7 @@ const Sidebar = ({
 
           <div className="more-divider"></div>
 
-          <div className="more-menu-item">
+          <div className="more-menu-item" onClick={handleLogout}> {/* ADDED onClick */}
             <span>Log out</span>
           </div>
         </div>
